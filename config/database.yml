@@ -20,16 +20,19 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
+  host:     <%= ENV['IP'] %>
 
 development:
   <<: *default
-  database: day11_development
+  database: achive_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: day11
+  #username: achive
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: day11_test
+  database: achive_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +83,7 @@ test:
 #
 production:
   <<: *default
-  database: day11_production
-  username: day11
-  password: <%= ENV['DAY11_DATABASE_PASSWORD'] %>
+  database: postgres
+  username: <%= ENV['HEROKU_DATABASE_USERNAME'] %>
+  password: <%= ENV['HEROKU_DATABASE_PASSWORD'] %>
+  hostname: <%= ENV['DATABASE_URL'] %>
