@@ -1,0 +1,29 @@
+<h2>お問い合わせの内容を確認して下さい。</h2>
+<br>
+
+<%= form_for(@ask, url: ask_finish_path) do |f| %>
+<body>
+        <font size="4"><b>お名前：</b></font><br>
+            <%= f.hidden_field :name %>
+            <h3><%= @ask.name %><br></h3>
+<br>
+        <font size="4"><b>メールアドレス：</b></font><br>
+            <%= f.hidden_field :email %>
+            <%= @ask.email %><br>
+<br>        
+        <font size="4"><b>問い合わせの内容：</b></font><br>
+            <%= f.hidden_field :content %>
+           <h3><%= simple_format( @ask.content) %></h3><br>
+<br>    
+<%= f.submit '登録する' %>
+<% end %>
+</body>
+
+<br>
+<%= form_for(@ask, url: ask_new_path) do |f| %>
+ <%= f.hidden_field :name %>
+ <%= f.hidden_field :email %>
+ <%= f.hidden_field :content %>
+<%= f.submit '訂正する', name: 'back' %>
+<% end %>
+

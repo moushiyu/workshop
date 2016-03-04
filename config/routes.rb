@@ -1,6 +1,19 @@
 Rails.application.routes.draw do
+  get 'ask/new'
+
+  get 'ask/confirm'
+
+  get 'ask/finish'
+
   resources :blogs
   root 'top#index'
+  get 'ask/new', to: 'ask#new'
+  post 'ask/new', to: 'ask#new'
+  get 'ask/confirm', to:'ask#new'
+  post 'ask/confirm', to: 'ask#confirm'
+  post 'ask/finish', to:'ask#create'
+  get 'ask/finish', to:'ask#finish'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
