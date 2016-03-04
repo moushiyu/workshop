@@ -1,3 +1,41 @@
-// Place all the styles related to the ask controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.jumbotron{
+    background: #000 url("achieve.png") center center;
+    background-size : cover;
+    h1,p{
+        color:white;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+body{
+    background-image: image-url("back.jpg");
+}
+
+h1{
+    color:blue;
+    margin:20px auto auto auto;
+    text-align:center;
+    font-size:10px;
+}
+
+p{
+    color:black;
+    font-size: 40px;
+    text-align: center;
+}
+.btn{
+    background: black;
+    border: 1px solid #ddd;
+    border-radius:20px;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    width: 200px;
+    padding:10px 0;
+    text-align:center;
+    margin:auto;
+    text-decoration:none;
+    display:block;
+    font-weight:bold;
+    font-size:20px;
+}
