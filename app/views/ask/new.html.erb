@@ -1,0 +1,32 @@
+
+<ul>
+  <% # errorsに入っているエラー内容を出力する %>
+  <% @ask.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+
+<h2>お問い合わせの内容を記入して下さい</h2>
+<br>
+<%= form_for(@ask, url: ask_confirm_path) do |f| %>
+
+      <div class="field">
+        <%= f.label :お名前 %><br />
+        <%= f.text_field :name , :size =>26 %>
+      </div>
+  
+      <div class="field">
+        <%= f.label :メールアドレス %><br />
+        <%= f.text_field :email , :size =>26 %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :お問い合わせの内容 %><br />
+        <%= f.text_area :content ,:cols => 25, :rows => 5%>
+      </div>
+  
+       <br>
+ <%= f.submit"登録する" %>
+<% end %>
+
+<br>
